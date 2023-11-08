@@ -13,10 +13,13 @@
 
 #define THREAD_NUM 2
 
-sem_t Empty;
+sem_t Empty; //declaring semaphores
 sem_t Full;
 
-pthread_mutex_t mutex;
+pthread_t producer; //declaring producer thread
+pthread_t consumer; //declaring consumer thread
 
-int buffer[2];
-int count = 0;
+pthread_mutex_t mutex; //declaring mutex lock
+
+int buffer[2]; //buffer that holds two values
+int count = 0; //used to control how many times code iterates
